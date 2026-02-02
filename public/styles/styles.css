@@ -1,0 +1,411 @@
+@import url(normalize.css);
+
+/* nav{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+} */
+header {
+  width: 100%;
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+header video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.hero_content {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: absolute;
+}
+
+
+.nav-link {
+  color: var(--white) !important;
+}
+
+.nav-link:hover {
+  border-bottom: 2px solid #00d4ff; 
+  color: #f1c40f !important;
+}
+
+
+
+
+
+  .logo-image {
+    height: 50px;
+
+    margin: 0;
+}
+
+
+
+.header-link a {
+  color: rgb(3, 1, 1);
+  padding: 0 20px;
+  text-decoration: none;
+}
+
+
+
+.search-container {
+  /* White background for the bar itself */
+  background-color: #ffffff;
+  /* Highly rounded corners */
+  border-radius: 50px;
+  /* Slight, very light grey border */
+  border: 1px solid #e0e0e0;
+  /* Dimensions matching the visual feel */
+  width: 400px;
+  height: 50px;
+  /* Flex layout to align input and icon */
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  /* Key feature: The subtle 3D-like shadow */
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.05),
+    /* Soft, dark shadow */
+    0 1px 1px rgba(255, 255, 255, 0.7) inset;
+  /* Subtle inner highlight for depth */
+}
+
+/* --- Search Input Styling --- */
+.search-input {
+  width: 100%;
+  flex-grow: 1;
+  /* Takes up most of the space */
+  border: none;
+  /* Remove default border */
+  outline: none;
+  /* Remove focus outline */
+  background: none;
+  /* Transparent background */
+  padding: 0;
+  font-size: 16px;
+  color: #333;
+  /* Dark text for contrast */
+}
+
+/* Placeholder text style to match the light grey 'SEARCH...' */
+.search-input::placeholder {
+  color: #9e9e9e;
+  /* Muted grey for 'SEARCH...' */
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+/* --- Icon Styling --- */
+.search-icon {
+  /* SVG icon color matching the placeholder/border color */
+  fill: #9e9e9e;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  /* Ensure the icon is slightly clickable/interactive visually if it were a button */
+  cursor: pointer;
+}
+
+
+
+.wwa_preview {
+  min-height: 350px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.wwa_preview img {
+  width: 100%;
+  position: absolute;
+  border-radius: inherit;
+}
+
+.wwa_preview .wwa_preview_content {
+  position: absolute;
+  z-index: 50;
+  top: 100%;
+  background-color: #2c3e506d;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+  border-radius: inherit;
+}
+
+.wwa_preview .wwa_preview_content a {
+  font-size: var(--fs_smaller);
+  font-weight: 500;
+  background-color: var(--secondary_color);
+  color: var(--white);
+  padding: 14px 32px ;
+  text-transform: capitalize;
+}
+
+.wwa_preview:hover > .wwa_preview_content{
+  top: 0;
+}
+
+.wwa_description {
+  padding: 15px 0;
+}
+
+.div-h1 {
+  padding: 0 20px;
+  max-width: 100%;
+  min-height: 800px;
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+  color: rgb(4, 4, 4);
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+
+
+
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+#why-us {
+  padding: 60px 20px;
+  background-color: #f0f4f8;
+  text-decoration: none !important;
+}
+
+#why-us .why-cards {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+#why-us .card {
+  width: 260px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#why-us .card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+#contact-form {
+  background-color: #f9f9f9;
+  padding: 50px 20px;
+}
+
+.form-container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(240, 240, 240, 0.7);
+}
+
+form table {
+  width: 100%;
+  border-spacing: 15px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.submit-btn {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.submit-btn button {
+  background-color: #2c3e50;
+  color: white;
+  padding: 14px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.whatsapp {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.whatsapp a {
+  background-color: #25D366;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+footer {
+  background: rgba(44, 62, 80, 0.95);
+  color: white !important;
+  padding: 60px 20px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  color: #000;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo_footer_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo_footer_container p {
+  text-align: center;
+  color: #fff;
+}
+
+.footer-logo {
+ 
+    height: 80px;
+    background-color: #f0f4f8;
+    border-radius: 30px;
+    margin-bottom: 5px;
+  
+
+}
+.footer-container p{
+  color: #fff;
+}
+.footer-container h3,
+.footer-container h4 {
+  color: #f1c40f;
+}
+
+
+.footer-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.whatssap:hover {
+  color: #f1c40f;
+  background-color: green;
+  border-radius: 20px;
+  padding: 0 5px;
+}
+
+.footer-container a {
+  color: #ecf0f1;
+  text-decoration: none;
+  margin-right: 15px;
+  
+}
+
+.quick-link:hover {
+  color: #f1c40f;
+  border-bottom: 2px solid #00d4ff; 
+  border-radius: 20px;
+}
+
+.phone:hover {
+  color: #f1c40f;
+  border-bottom:1px solid #00d4ff; 
+}
+
+.footer-links {
+  padding-left: 20px;
+  padding: 20px;
+  margin: 100px;
+
+}
+
+.footer-bottom {
+  text-align: center;
+  /* margin-top: 40px; */
+  padding: 10px;
+
+
+}
+
+.folow1,
+.folow2,
+.folow3 {
+  padding-right: 10px;
+
+  font-size: 25px;
+}
+
+
+
+
+
+.folow1:hover {
+  color: blue;
+}
+
+.folow2:hover {
+  color: red;
+}
+
+.folow3:hover {
+  color: #000;
+}
+
+
+
+
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}

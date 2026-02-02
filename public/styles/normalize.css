@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+
+}
+
+:root {
+    --primary_color: #2c3e50;
+    --secondary_color: #f1c40f;
+
+    /* other colors */
+    --white: #fff;
+    --textColor: #555;
+
+    /* typography */
+    --fs_huge: 55px;
+    --fs_smaller: 14px;
+
+}
+
+/* nav .navbar {
+    padding: 10px 6%;
+    width: 100%;
+    z-index: 1030;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    background: transparent !important;
+    transition: backround-color 0.3s ease , box-shadow 0 2px 0.3 ease;
+}
+.navbar.scrolled {
+    background: #fff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0,1);
+} */
+/* الكود الأساسي ديال شريط التنقل */
+#mainNav {
+    
+    /* هنا كنستعملو position: fixed من كلاس Bootstrap px-5 position-fixed */
+    z-index: 1030; /* قيمة عالية باش يبقى فوق المحتوى */
+    transition: background-color 0.5s ease; /* إضافة حركة ناعمة للتغيير */
+    background-color: transparent; /* الخلفية الشفافة الأساسية */
+    padding: 10px 6%; /* تحكم في البادينغ ديالك */
+    width: 100%; /* العرض 100% */
+}
+
+/* الكلاس اللي غادي تزيدها JavaScript عند التمرير */
+#mainNav.scrolled {
+    background-color: white !important; /* الخلفية بيضاء عند التمرير */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف باش يبان التغيير */
+
+}
+
+#mainNav.scrolled .nav-link {
+   color: var(--primary_color) !important;
+    
+}
+#mainNav.scrolled .nav-link:hover{
+    color: var(--secondary_color) !important;
+}
+
+/* تعديلات جمالية للروابط */ 
+.nav-link {
+    color: #333 !important; /* لون الخط يكون غامق */
+    font-weight: 500;
+}
+
+
+h1 {
+    font-size: var(--fs_huge) !important;
+    font-weight: 700 !important;
+    line-height: 80px !important;
+    color: var(--white) !important;
+}
+
+h1 .title_Splited {
+    color: var(--secondary_color);
+}
+
+h4 { /* just for taglines*/
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+a {
+    font-size: var(--fs_smaller);
+    font-weight: 400 !important;
+}
+
+
+section {
+    padding: 6% !important;
+}
+
+p {
+    color: var(--textColor);
+}
+.primary_btn {
+    height: 50px;
+    width: fit-content;
+    font-weight: 500;
+    font-size: var(--fs_smaller);
+    letter-spacing: 0.05em;
+    border-radius: 0.8em;
+    cursor: pointer;
+    border: none;
+    text-transform: capitalize;
+    background-color: var(--primary_color);
+    padding: 18px 32px;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.primary_btn:hover{
+    color: var(--secondary_color);
+}
+
+.tagline {
+    color: var(--secondary_color) !important;
+    padding:15px 0;
+    
+}
