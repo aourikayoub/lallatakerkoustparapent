@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\http\Controllers\HomeController;
+use App\Http\Controllers\Lang;
 
 
 Route::get('/' , [HomeController::class , 'HomePage'])->name('HomePage');
@@ -15,3 +16,6 @@ Route::get('/quad', function () {
 Route::get('/camel', function () {
     return view('camel');
 })->name('camel');
+
+
+Route::get('/{locale}' , [Lang::class , 'LangSwicher'])->name('langSwitcher');

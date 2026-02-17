@@ -1,7 +1,7 @@
 <footer>
     <div class="footer-container">
       <div class="logo_footer_container">
-        <img class="footer-logo" src="{{ asset('images/new logo2.png') }}" alt="">
+        <img class="footer-logo" src="{{ asset('images/ChatGPT Image Feb 15, 2026, 01_00_44 AM.png') }}" alt="">
         <p>Adventure, nature, and <br> unforgettable experiences in one <br> of Morocco's most stunning <br>
           destinations.</p>
       </div>
@@ -9,9 +9,8 @@
       <div>
         <h4>Quick Links</h4>
         <ul class="Quick-links">
-          <li><a class="quick-link" href="#about">Who We Are</a></li>
+          <li><a class="quick-link" href="#about">{{ __('navbar.nav_about') }}</a></li>
           <li><a class="quick-link" href="#why-us">Why Choose Us</a></li>
-          <li><a class="quick-link" href="#activities">Our Activities</a></li>
           <li><a class="quick-link" href="#activities">Our Activities</a></li>
           <li><a class="quick-link" href="#contact-form">Contact</a></li>
         </ul>

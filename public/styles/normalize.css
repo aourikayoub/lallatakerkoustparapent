@@ -5,7 +5,7 @@
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    user-select: none;
+    
 
 }
 
@@ -20,7 +20,8 @@
     /* typography */
     --fs_huge: 55px;
     --fs_smaller: 14px;
-
+/* btn color */
+--btn_color:rgb(57, 169, 224);
 }
 
 /* nav .navbar {

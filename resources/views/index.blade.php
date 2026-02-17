@@ -23,13 +23,15 @@
   <!-- bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-  <!-- Icons -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <!-- icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Icons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- icons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <body>
@@ -41,11 +43,11 @@
     </video>
     <div class="hero_content">
       <div class="hero_section">
-        <h1 class="py-4">Adventure Awaits in <br> Every <span class="title_Splited">Direction</span> </h1>
+        <h1 class="py-4">{{ __('messages.hero_welcome') }}</h1>
       </div>
 
       <div class="search-container">
-        <input type="text" class="search-input" placeholder="paragliding , quad , camel's journey">
+        <input type="text" class="search-input" placeholder="paragliding , quad , camel's Ride, Hotel">
 
         <svg class="search-icon" viewBox="0 0 24 24">
           <path
@@ -58,14 +60,12 @@
   <section id="about" class="container-fluid wwa_section">
     <div class="row">
       <div class="col-md-6 wwa_content">
-        <h4 class="tagline"> Who We Are</h4>
+        <h4 class="tagline"> {{ __('about.title_about') }}</h4>
         <h2>
-          Discover the Ultimate Adventure Near Marrakech
+          {{ __('about.dis_about')}}
         </h2>
         <p class="wwa_description">
-          At Lalla Takerkoust Parapente, we welcome you to a unique world of adventure just outside Marrakech. Here, you
-          can soar above Mount Agargour with breathtaking views of the Toubkal mountains and the Lalla Takerkoust dam,
-         
+         {{ __('about.para_about') }}
         </p>
       </div>
       <div class="col-md-6 wwa_preview">
@@ -82,69 +82,58 @@
 
   <section id="why-us">
     <div>
-      <h2> Why Choose Us?</h2>
+      <h2 class=" "> {{ __('cards.title_cards') }}</h2>
       <div class="why-cards">
         <div class="card">
           <img src="{{ asset('images/items_2/adrinaline.jpg') }}" alt="Adventure">
-          <h4>Adrenaline Experience</h4>
-          <p>Adrenaline is the driving force that makes the adventure more exciting and thrilling. From paragliding to
-            quad rides, every moment is filled with excitement, making your heart race,
-            creating an unforgettable experience and filling you with energy and excitement.</p>
+          <h4>{{__('cards.title_adr_para')}}</h4>
+          <p>{{ __('cards.text_adr_para') }}</p>
+          <a class="btn_card" href="">{{ __('cards.btn_cards') }}</a>
         </div>
 
         <div class="card">
           <img src="{{ asset('images/items_1/img para 2.jpg') }}" alt="Parapente">
-          <h4>Unforgettable Paragliding</h4>
-          <p>Embark on an exciting aerial adventure with a paragliding exprience in Lalla Takerkoust, flying over Mount
-            Agargour and enjoying breathtaking and Lalla Takerkoust Dam,
-            for unforgettable moments filled with adrenaline and fun .</p>
+          <h4>{{ __('cards.title_adv_para') }}</h4>
+          <p>{{ __('cards.text_adv_para') }}</p>
+          <a class="btn_card" href="">{{ __('cards.btn_cards') }}</a>
         </div>
 
         <div class="card">
           <img src="{{ asset('images/items_1/IMG_20221126_205957-scaled.jpg') }}" alt="Buggy & Quad">
-          <h4>Buggy & Quad Tours</h4>
-          <p>Quad tours in lalla takerkoust offer a unique adventure experience amidst nature. Visitors can explore the
-            forests of lalla takerkoust, enjoy the breathtaking views of lalla takerkoust Dam, or discover the Agafay
-            desert landscapes on quad bikes.
-            These tours combine excitement with natural beauty, making it an unforgettable experience.</p>
+          <h4>{{ __('cards.title_quad') }}</h4>
+          <p>{{ __('cards.text_quad') }}</p>
+          <a class="btn_card" href="">{{ __('cards.btn_cards') }}</a>
         </div>
 
         <div class="card">
           <img src="{{ asset('images/items_1/OIP.webp') }}" alt="Camel Ride">
-          <h4>Agafay Camel Rides</h4>
-          <p>Enjoy an unforgettable experience with camels in the Agafay Desert , where you can immerse yourself in the
-            tranquility of stunning landscapes
-            and embark on a unique journey across the desert, guided by the majestic camel.</p>
+          <h4>{{ __('cards.title_camel') }}</h4>
+          <p>{{ __('cards.text_camel') }}</p>
+          <a class="btn_card" href="">{{ __('cards.btn_cards') }}</a>
         </div>
         <div class="card">
           <img src="{{ asset('images/items_1/IMG-20241231-WA0006.jpg') }}" alt="Tea Break Before Takeoff">
-          <h4>Tea Break Before Takeoff</h4>
-          <p>Before the adventure begins, we welcome you with a warm Moroccan tea break-time to relax, breathe, and
-            enjoy the calm atmosphere. After that,
-            we head off in a pleasant setting toward the mountain, with every step adding to the experience..</p>
+          <h4>{{__('cards.title_tea') }}</h4>
+          <p>{{ __('cards.text_tea') }}</p>
+          <a class="btn_card" href="">{{ __('cards.btn_cards') }}</a>
         </div>
         <div class="card">
           <img src="{{ asset('images/items_1/photo_2025-08-31_06-53-49.jpg') }}" alt="Optional Lanch">
-          <h4>Optional Lanch</h4>
-          <p>For guests who want to add a Moroccan flavor to their day, we offer chicken tagine with fries or
-            vegetables, meat tagine, oe traditional couscous. Salad Maroccan and dessert are included.
-            The meal is not part of the package, but the taste is abosolutely worth it.</p>
+          <h4>{{ __('cards.title_lanch') }}</h4>
+          <p>{{ __('cards.text_lanch') }}</p>
+          <a class="btn_card" href="">{{ __('cards.btn_cards') }}</a>
         </div>
       </div>
     </div>
   </section>
 
   <section id="activities">
-    <h2> Discover Our Activities</h2>
+    <h2> {{ __('activities.title') }}</h2>
     <ul>
-      <li><b> <em>Preathtaking views</em> </b> : the scenery here will blow your mind - pure nature, stunning
-        landscapes, and peaceful vibes that make you're flying over paradise.</li>
-      <li><b> <em>Professional photography</em></b>:It's not just about the flight. we capture your experience with
-        high-quality photos and videos so the memories stay with you forever.</li>
-      <li><b><em>Warm Welcome</em></b>: From the the moment you arrive, you'll feel the good vibes-friendly faces, and a
-        team that treats you like family.</li>
-      <li><b><em>Most lmportantly, Safety</em></b>: Your Safety comes first. We use modern gear and our experienced
-        pilots make sure you fly with total peace of mind.</li>
+      <li><b> <em>{{ __('activities.views_title') }}</em> </b> :{{ __('activities.views_text') }}</li>
+      <li><b> <em>{{ __('activities.photo_title') }}</em></b>:{{ __('activities.photo_text') }}</li>
+      <li><b><em>{{ __('activities.welcome_title') }}</em></b>: {{ __('activities.welcome_text') }}</li>
+      <li><b><em>{{ __('activities.safety_title') }}</em></b>:{{ __('activities.safety_text') }}</li>
     </ul>
   </section>
 
@@ -207,7 +196,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
     integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
     crossorigin="anonymous"></script>
-    <script src="{{ asset('js/script.js') }}"></script>
+  <script src="{{ asset('js/script.js') }}"></script>
 </body>
 
 </html>

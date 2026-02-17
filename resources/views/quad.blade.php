@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        //icons
+         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -26,7 +28,78 @@
             <a href="{{ route('HomePage') }}">Home</a>
             <a href="#about">About Us</a>
             <a href="#adventure-quad">Adventures</a>
-            <a href="#">Packages</a>
+           <div class="nav-item dropdown-hover mx-3">
+          <a class="nav-link text-capitalize" href="#activities">
+            activities
+          </a>
+
+          <ul class="dropdown-menu-custom">
+            <li><a href="#">Paragliding</a></li>
+            <li><a href="{{ route('quad') }}">Quad</a></li>
+            <li><a href="{{ route('camel') }}">Camel Ride</a></li>
+            <li><a href="#">Hotel</a></li>
+          </ul>
+        
+          </div>
+           <li class="nav-item dropdown-hover mx-3">
+          <a class="nav-link text-capitalize">
+            @if (app()->getLocale() == 'en')
+              <img draggable="false" width="25" src="{{ asset('images/icons/flags/uk.svg') }}" alt="uk">
+              @elseif (app()->getLocale() == 'ar')
+                <img draggable="false" width="25" src="{{ asset('images/icons/flags/morocco.svg') }}" alt="morocco">
+                  @elseif (app()->getLocale() == 'fr')
+                    <img draggable="false" width="25" src="{{ asset('images/icons/flags/france.svg') }}" alt="france">
+                      @elseif (app()->getLocale() == 'es')
+                        <img draggable="false" width="25" src="{{ asset('images/icons/flags/spain.svg') }}" alt="spain">
+                          @elseif (app()->getLocale() == 'it')
+                            <img draggable="false" width="25" src="{{ asset('images/icons/flags/italy.svg') }}" alt="italy">
+            @endif
+            <span>
+              <i class='bx bx-chevron-down'></i>
+            </span>
+          </a>
+
+          <ul class="dropdown-menu-custom">
+            <li><a href="{{ route('langSwitcher', 'en')}}">
+                <img draggable="false" width="25" src="{{ asset('images/icons/flags/uk.svg') }}" alt="uk">
+                <span class="px-2">
+                  English
+                </span>
+              </a></li>
+            <li>
+              <a href="{{ route('langSwitcher', 'ar')}}">
+                <img draggable="false" width="25" src="{{ asset('images/icons/flags/morocco.svg') }}" alt="morocco">
+                <span class="px-2">
+                  العربية
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="{{ route('langSwitcher', 'fr')}}">
+                <img draggable="false" width="25" src="{{ asset('images/icons/flags/france.svg') }}" alt="france">
+                <span class="px-2">
+                  Française
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="{{ route('langSwitcher', 'es')}}">
+                <img draggable="false" width="25" src="{{ asset('images/icons/flags/spain.svg') }}" alt="spain">
+                <span class="px-2">
+                  Español
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="{{ route('langSwitcher', 'it')}}">
+                <img draggable="false" width="25" src="{{ asset('images/icons/flags/italy.svg') }}" alt="italy">
+                <span class="px-2">
+                  italiana
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
         </nav>
 
         <div class="nav-actions">
@@ -114,7 +187,7 @@
 
 
     </section>
-    <footer>
+    <!-- <footer>
         <div class="container-footer">
             <div class="about-footer">
                 <img src="{{ asset("images/new logo.png") }}" alt="">
@@ -143,7 +216,48 @@
         <div class="footer-bottom">
             &copy; {{ date(format: 'Y') }} <b>Ayoub Aourik</b> - All Rights Reserved.
         </div>
-    </footer>
+    </footer> -->
+    <footer>
+    <div class="footer-container">
+      <div class="logo_footer_container">
+        <img class="footer-logo" src="{{ asset('images/new logo2.png') }}" alt="">
+        <p>Adventure, nature, and <br> unforgettable experiences in one <br> of Morocco's most stunning <br>
+          destinations.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="Quick-links">
+          <li><a class="quick-link" href="#about">Who We Are</a></li>
+          <li><a class="quick-link" href="#why-us">Why Choose Us</a></li>
+          <li><a class="quick-link" href="#activities">Our Activities</a></li>
+          <li><a class="quick-link" href="#activities">Our Activities</a></li>
+          <li><a class="quick-link" href="#contact-form">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact Info</h4>
+        <p>Phone: <a class="phone" href="tel:+212652645856">+212 652 645 856</a></p>
+        <p>Email: <a class="phone" href="mcmadlom53@gmail.com">contact@lallatakerkoust.com</a></p>
+        <p>WhatsApp: <a class="whatssap" href="https://wa.me/212652645856">Message us</a></p>
+      </div>
+
+      <div class="footer-bott">
+        <h4>Follow Us</h4>
+        <a class="folow1" href="https://facebook.com/ayoub.aourik.2025"><i class="fa-brands fa-facebook-f"></i></a>
+        <a class="folow2"href="https://www.instagram.com/lalla_takerkoust_parapent_vip?igsh=bm14dmE0M2xsYXQ="><i class="fa-brands fa-instagram"
+          ></i></a>
+        <a class="folow3" href="#"><i class="fa-brands fa-tiktok"></i></a>
+
+
+      </div>
+    </div>
+    <hr>
+    <div class="footer-bottom">
+      &copy; {{ date(format: 'Y') }} Ayoub AouRik - All Rights Reserved.
+    </div>
+  </footer>
     <script src="quad.js"></script>
 </body>
 

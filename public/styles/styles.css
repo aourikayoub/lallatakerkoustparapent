@@ -43,7 +43,54 @@ header video {
   color: #f1c40f !important;
 }
 
+/* dropdown container */
+.nav-link-drop{
+  list-style: none;
+}
+.dropdown-hover {
+  position: relative;
+}
 
+/* dropdown menu */
+.dropdown-menu-custom {
+  position: absolute;
+  top: 130%;
+  left: 0;
+  background: #ffffff;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+/* links inside dropdown */
+.dropdown-menu-custom li a {
+  display: block;
+  padding: 10px 20px;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu-custom li a:hover {
+  border-bottom: 2px solid #00d4ff; 
+  color: #f1c40f !important;
+}
+
+/* hover effect */
+.dropdown-hover:hover .dropdown-menu-custom {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 
 
 
@@ -198,6 +245,7 @@ header video {
   text-decoration: none !important;
 }
 
+
 #why-us .why-cards {
   max-width: 1000px;
   margin: auto;
@@ -220,6 +268,20 @@ header video {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 15px;
+}
+.btn_card{
+  border: 1px solid var(--btn_color);
+  background-color: var(--primary_color);
+  padding:5px 0;
+  border-radius: 25px;
+   color: white;
+   text-decoration: none;
+}
+.btn_card:hover{
+   border: 1px solid var(--btn_color);
+   background-color: white;
+    color: var(--btn_color);
+    font-size: 17px;
 }
 
 #contact-form {
@@ -263,7 +325,12 @@ form textarea {
   border-radius: 8px;
   cursor: pointer;
 }
-
+.submit-btn button:hover{
+  border: 1px solid var(--btn_color);
+  background-color:white;
+  color: var(--btn_color);
+  transition: 0.3s;
+}
 .whatsapp {
   text-align: center;
   margin-top: 40px;
@@ -310,9 +377,9 @@ footer {
 
 .footer-logo {
  
-    height: 80px;
-    background-color: #f0f4f8;
-    border-radius: 30px;
+    height: 100px;
+    /* background-color: #f0f4f8; */
+    
     margin-bottom: 5px;
   
 
