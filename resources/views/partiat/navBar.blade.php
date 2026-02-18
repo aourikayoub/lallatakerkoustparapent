@@ -110,7 +110,7 @@
       </ul>
     </div>
     <div class="">
-      <a class="primary_btn  primary_btn rounded" href="#">get started</a>
+      <a class="primary_btn  primary_btn rounded" href="#">{{ __('contact.get_started') }}</a>
     </div>
   </div>
   </div>

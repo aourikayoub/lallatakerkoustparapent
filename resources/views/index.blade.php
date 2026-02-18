@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="{{ app()->getLocale() }}" dir="rtl">
 
 <head>
   <meta charset="UTF-8">
@@ -20,6 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
 
+
   <!-- bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -32,9 +33,11 @@
   <!-- icons -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+
+
 </head>
 
-<body>
+<body id="body">
   @include('partiat/navBar')
   <header class="">
 
@@ -156,35 +159,35 @@
 
   <section id="contact-form">
     <div class="form-container">
-      <h2>Contact Us</h2>
+      <h2>{{ __('footer.title_contact_footer') }}</h2>
       <form action="#" method="post">
 
         <div class="mb-4">
-          <label class="form-label" for="name">Full Name:</label>
-          <input class="form-control" type="text" id="name" placeholder="Your Full Name" name="name" required>
+          <label class="form-label" for="name">{{ __('contact.name') }}:</label>
+          <input class="form-control" type="text" id="name" placeholder="{{ __('contact.y_name') }}" name="name" required>
         </div>
         <div class="mb-4">
-          <label class="form-label" for="phone">Phone Number:</label>
-          <input class="form-control" type="phone" id="Number" placeholder="Your Phone Number" name="phone" required>
+          <label class="form-label" for="phone">{{ __('contact.namber') }}:</label>
+          <input class="form-control" type="phone" id="Number" placeholder="{{ __('contact.y_namber') }}" name="phone" required>
         </div>
         <div class="mb-4">
-          <label class="form-label" for="date">Date of Visit:</label>
+          <label class="form-label" for="date">{{ __('contact.d_o_v') }}:</label>
           <input class="form-control" type="date" id="date" name="date" required>
         </div>
         <div class="mb-4">
-          <label class="form-label" for="message">Your Message:</label>
-          <textarea class="form-control" id="message" name="message" placeholder="Your Message" rows="4"
+          <label class="form-label" for="message">{{ __('contact.Y_Message') }}:</label>
+          <textarea class="form-control" id="message" name="message" placeholder="{{ __('contact.Y_Message') }}" rows="4"
             required></textarea>
         </div>
 
         <div class="submit-btn w-100">
-          <button class="w-100 primary_button" type="submit">Send Message</button>
+          <button class="w-100 primary_button" type="submit">{{ __('contact.s_message') }}</button>
         </div>
       </form>
 
       <div class="whatsapp">
-        <p>Or contact us directly on WhatsApp:</p>
-        <a href="https://wa.me/212652645856" target="_blank">Message us on WhatsApp</a>
+        <p>{{ __('contact.or_contact_whatssap') }}:</p>
+        <a href="https://wa.me/212652645856" target="_blank">{{ __('contact.m_us_on_whatsap') }}</a>
       </div>
     </div>
   </section>

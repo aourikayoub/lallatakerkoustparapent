@@ -108,7 +108,9 @@ header video {
   text-decoration: none;
 }
 
-
+.nav-link.linkActive {
+  color: red !important;
+}
 
 .search-container {
   /* White background for the bar itself */
@@ -386,6 +388,10 @@ footer {
 }
 .footer-container p{
   color: #fff;
+  
+    max-width: 250px;   /* t7dded ch7al 3ard bach yt9sm sstour */
+    line-height: 1.6;
+
 }
 .footer-container h3,
 .footer-container h4 {

@@ -28,3 +28,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // استدعاء الدالة عند تحميل الصفحة للتأكد من الموضع الأولي
     changeNavOnScroll();
 });
+
+
+
+var CurrentLanguage = document.getElementsByTagName('html')[0];
+var navLinks = document.querySelectorAll('.nav-link');
+
+    if (CurrentLanguage.getAttribute('lang') == 'ar') {
+        CurrentLanguage.setAttribute('dir' , 'rtl');
+    }
+    else {
+        CurrentLanguage.setAttribute('dir' , 'ltr');
+    }
+
+    if (CurrentLanguage.getAttribute('lang') == 'es') {
+        navLinks.forEach(link => {
+            link.classList.add('.linkActive');
+        });
+    }
+
+
