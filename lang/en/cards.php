@@ -18,8 +18,9 @@ return [
     'title_lanch'=>'Optional Lanch',
     'text_lanch'=>'For guests who want to add a Moroccan flavor to their day, we offer chicken tagine with fries or vegetables, meat tagine, oe traditional couscous. Salad Maroccan and dessert are included. The meal is not part of the package, but the taste is abosolutely worth it.',
     'btn_cards'=>'More info',
-
-
-
+    'title_transport' => 'Comfortable Transport',
+    'text_transport' => 'We offer comfortable transport services, picking you up from your hotel in Marrakech and dropping you back off after the adventure, ensuring a hassle-free experience.',
+    'title_media' => 'Photography & Video',
+    'text_media' => 'Capture every thrilling moment with our photography and video services. Relive your paragliding flight or quad experience through high-quality media.'
 ]  
-    ?>
+?>

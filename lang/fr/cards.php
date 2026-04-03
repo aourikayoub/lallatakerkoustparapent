@@ -14,4 +14,8 @@ return [
     'title_lanch'=>'Déjeuner optionnel',
     'text_lanch'=>'Pour ceux qui souhaitent ajouter une touche marocaine à leur journée, nous proposons tajine au poulet avec frites ou légumes, tajine de viande ou couscous traditionnel. Salade marocaine et dessert inclus. Le repas n`est pas inclus dans le pack.',
     'btn_cards'=>'Plus d`informations',
+    'title_transport' => 'Transport (Prise en charge)',
+    'text_transport' => 'Nous proposons un service de transport confortable. Nous venons vous chercher à votre hôtel à Marrakech et vous y ramenons après l`aventure, pour une expérience sans tracas.',
+    'title_media' => 'Photographie & Vidéo',
+    'text_media' => 'Capturez chaque moment passionnant grâce à nos services de photographie et vidéo professionnels. Revivez votre vol en parapente ou votre expérience en quad avec des médias de haute qualité.'
 ];

@@ -14,4 +14,8 @@ return [
     'title_lanch'=>'Almuerzo opcional',
     'text_lanch'=>'Ofrecemos tajín de pollo o carne o cuscús tradicional con ensalada y postre.',
     'btn_cards'=>'Más información',
+    'title_transport' => 'Transporte Cómodo',
+    'text_transport' => 'Ofrecemos un servicio de transporte cómodo que lo recoge de su hotel en Marrakech y lo deja después de la aventura, garantizando una experiencia sin complicaciones.',
+    'title_media' => 'Fotografía y Video',
+    'text_media' => 'Capture cada momento emocionante con nuestros servicios de fotografía y video. Reviva su vuelo en parapente o experiencia en quad con medios de alta calidad.'
 ];
