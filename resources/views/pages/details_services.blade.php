@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lalla Takerkoust Parapente - Service Details</title>
+  <title>{{ $service->{'Service_name_' . app()->getLocale()} }} | Lalla Takerkoust Parapente</title>
+  <meta name="description" content="{{ Str::limit($service->{'Service_overview_' . app()->getLocale()}, 150) }}">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ $service->{'Service_name_' . app()->getLocale()} }}">
+  <meta property="og:description" content="{{ Str::limit($service->{'Service_overview_' . app()->getLocale()}, 150) }}">
+  <meta property="og:image" content="{{ asset($service->service_cover) }}">
+  <meta property="og:url" content="{{ url()->current() }}">
   <!-- css link -->
-  <link rel="stylesheet" href="{{ asset('styles/styles.css') }}">
+  @vite(['resources/css/styles.css'])
 
   <!-- poppins font  (english ....)-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,19 +41,19 @@
 </head>
 
 <body>
-  @include('partiat/navBar')
+  @include('partials.navbar')
 
   <main class="service-details-page">
     
     <!-- Hero Section -->
-    <section class="sd-hero" style="background-image: url('{{ asset('images/bgs/young-woman-taking-photo-with-smartphone.jpg') }}');">
+    <section class="sd-hero" style="background-image: url('{{ asset($service->service_cover) }}');">
       <div class="sd-hero-overlay"></div>
       <div class="container-fluid px-md-5 sd-hero-content">
         <div class="row w-100">
           <div class="col-md-8">
-            <h1 class="sd-title">{{ __($service_data['title_key']) }}</h1>
-            <p class="sd-subtitle">{{ __($service_data['desc_key']) }}</p>
-            <a href="#book-call" class="impressive-btn mt-2 border-0">SCHEDULE A FREE CONSULTATION <i class="fa-solid fa-arrow-right"></i></a>
+            <h1 class="sd-title">{{ $service->{'Service_name_' . app()->getLocale()} }}</h1>
+            <p class="sd-subtitle">{{ $service->{'Service_overview_' . app()->getLocale()} }}</p>
+            <a href="#book-call" class="impressive-btn mt-2 border-0">{{ __('details.schedule_consultation') }} <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -76,7 +84,7 @@
                <i class="fa-solid fa-star text-warning"></i>
             </div>
           </div>
-          <span class="reviews-count">From 120+ Reviews</span>
+          <span class="reviews-count">{{ __('details.reviews_count') }}</span>
         </div>
       </div>
     </section>
@@ -86,34 +94,34 @@
       <div class="row text-center">
         <div class="col-md-3 stat-item">
           <h2 class="stat-number"><span class="counter" data-target="5" data-suffix="+">0</span></h2>
-          <p class="stat-desc">Years of active experience</p>
+          <p class="stat-desc">{{ __('details.stat_years_exp') }}</p>
         </div>
         <div class="col-md-3 stat-item">
           <h2 class="stat-number"><span class="counter" data-target="120" data-suffix="+">0</span></h2>
-          <p class="stat-desc">Experiences reconciled and maintained</p>
+          <p class="stat-desc">{{ __('details.stat_experiences') }}</p>
         </div>
         <div class="col-md-3 stat-item">
           <h2 class="stat-number"><span class="counter" data-target="99" data-suffix="%">0</span></h2>
-          <p class="stat-desc">Client retention rate consistently high</p>
+          <p class="stat-desc">{{ __('details.stat_retention') }}</p>
         </div>
         <div class="col-md-3 stat-item border-0">
           <h2 class="stat-number"><span class="counter" data-target="100" data-suffix="%">0</span></h2>
-          <p class="stat-desc">Safe, secure unforgettable service</p>
+          <p class="stat-desc">{{ __('details.stat_safe_service') }}</p>
         </div>
       </div>
     </section>
 
     <!-- Features Section -->
     <section class="sd-features container-fluid px-md-5 py-5">
-      <h2 class="section-title">What to Expect</h2>
+      <h2 class="section-title">{{ __('details.what_to_expect') }}</h2>
       <div class="features-grid mt-5">
         <div>
           <div class="feature-card text-center p-4 shadow-sm h-100 rounded">
             <div class="icon-wrapper mb-3 mx-auto shadow-sm">
               <i class="fa-solid fa-shield-halved"></i>
             </div>
-            <h4 class="fw-bold mb-3" style="color: var(--primary_color, #2c3e50);">Top-Tier Safety</h4>
-            <p class="text-muted">We use the latest verified equipment and our guides are highly certified professionals.</p>
+            <h4 class="fw-bold mb-3" style="color: var(--primary_color, #2c3e50);">{{ __('details.safety_title') }}</h4>
+            <p class="text-muted">{{ __('details.safety_desc') }}</p>
           </div>
         </div>
         <div>
@@ -121,8 +129,8 @@
             <div class="icon-wrapper mb-3 mx-auto shadow-sm">
               <i class="fa-solid fa-camera-viewfinder"></i>
             </div>
-            <h4 class="fw-bold mb-3" style="color: var(--primary_color, #2c3e50);">Memorable Media</h4>
-            <p class="text-muted">Capture every thrilling moment with professional photo and video packages available.</p>
+            <h4 class="fw-bold mb-3" style="color: var(--primary_color, #2c3e50);">{{ __('details.media_title') }}</h4>
+            <p class="text-muted">{{ __('details.media_desc') }}</p>
           </div>
         </div>
         <div>
@@ -130,8 +138,8 @@
             <div class="icon-wrapper mb-3 mx-auto shadow-sm">
               <i class="fa-solid fa-bus"></i>
             </div>
-            <h4 class="fw-bold mb-3" style="color: var(--primary_color, #2c3e50);">Seamless Transport</h4>
-            <p class="text-muted">Enjoy hassle-free round-trip transportation from your accommodation to the site.</p>
+            <h4 class="fw-bold mb-3" style="color: var(--primary_color, #2c3e50);">{{ __('details.transport_title') }}</h4>
+            <p class="text-muted">{{ __('details.transport_desc') }}</p>
           </div>
         </div>
         <div>
@@ -139,8 +147,8 @@
             <div class="icon-wrapper mb-3 mx-auto shadow-sm">
               <i class="fa-solid fa-user-check"></i>
             </div>
-            <h4 class="fw-bold mb-3" style="color: var(--primary_color, #2c3e50);">Expert Guides</h4>
-            <p class="text-muted">Our extensive local knowledge and expertise guarantees an exceptional adventure.</p>
+            <h4 class="fw-bold mb-3" style="color: var(--primary_color, #2c3e50);">{{ __('details.guides_title') }}</h4>
+            <p class="text-muted">{{ __('details.guides_desc') }}</p>
           </div>
         </div>
       </div>
@@ -151,13 +159,12 @@
       <div class="row align-items-stretch">
         <div class="col-md-7 mb-4 mb-md-0 d-flex">
           <div class="sd-image-wrapper w-100 position-relative shadow-sm" style="flex: 1; border-radius: 12px; overflow: hidden; min-height: 400px;">
-            <!-- Using another dynamic image or a static nice placeholder image closely related to paragliding/services -->
-            <img src="{{ asset('images/bgs/young-blonde-woman-jumping-top-hill.jpg') }}" alt="Service Experience" class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;">
+            <img src="{{ asset($service->service_cover) }}" alt="{{ $service->{'Service_name_' . app()->getLocale()} }}" class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;">
           </div>
         </div>
         <div class="col-md-5">
           <div class="sd-form-card shadow-sm h-100 d-flex flex-column justify-content-center">
-            <h3 class="text-center mb-4 sd-form-title">Book Your Experience</h3>
+            <h3 class="text-center mb-4 sd-form-title">Book Your {{ $service->{'Service_name_' . app()->getLocale()} }}</h3>
             <form action="#" method="post">
               <div class="mb-3">
                 <input type="text" class="form-control bg-transparent" name="full_name" placeholder="Full Name" required>
@@ -283,14 +290,14 @@
 
   </main>
 
-  @include('partiat.footer')
+  @include('partials.footer')
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
     integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
     crossorigin="anonymous"></script>
-  <script src="{{ asset('js/script.js') }}"></script>
+  @vite(['resources/js/script.js'])
 </body>
 
 </html>

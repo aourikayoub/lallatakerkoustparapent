@@ -1,9 +1,34 @@
 <?php
 
-    return [
-        'hero_welcome' => 'L\'aventure vous attend dans toutes les directions',
-        'search_placeholder' => 'Rechercher tout',
-        'search_btn' => 'Rechercher',
-    ];
-    
-?>
+return [
+    'hero_welcome' => 'L\'aventure vous attend dans toutes les directions',
+    'hero_title_1' => 'L\'aventure vous attend',
+    'hero_title_2' => 'dans toutes les',
+    'hero_title_3' => 'directions',
+    'search_placeholder' => 'Rechercher une activité...',
+    'search_btn' => 'Rechercher',
+    'client_reviews' => 'Avis de nos clients',
+    'rate_us' => 'Évaluez-nous',
+    'no_reviews' => 'Aucun avis pour l\'instant. Soyez le premier à nous évaluer !',
+    'share_experience' => 'Partagez votre expérience',
+    'your_name' => 'Votre nom',
+    'your_review' => 'Votre avis',
+    'submit_review' => 'Envoyer l\'avis',
+    'submitting' => 'Envoi en cours...',
+    'cancel' => 'Annuler',
+    'get_started_now' => 'Commencer maintenant',
+    'happy_clients' => 'Clients satisfaits',
+    'years_experience' => 'Années d\'expérience',
+    'successful_flights' => 'Vols réussis',
+    'user_rating' => 'Note des utilisateurs',
+    'your_moments' => 'Vos moments avec nous',
+    'send_message_title' => 'Envoyez-nous un message',
+    'your_full_name' => 'Votre nom complet',
+    'phone_placeholder' => 'WhatsApp / Téléphone',
+    'date_placeholder' => 'Sélectionnez la date',
+    'message_placeholder' => 'Comment pouvons-nous vous aider ?',
+    'send_message_btn' => 'Envoyer le message',
+    'review_success' => 'Merci beaucoup pour votre avis !',
+    'review_error' => 'Une erreur est survenue. Veuillez vérifier vos données.',
+    'connection_error' => 'Erreur de connexion. Veuillez réessayer plus tard.',
+];

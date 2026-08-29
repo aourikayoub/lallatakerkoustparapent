@@ -1,9 +1,34 @@
 <?php
 
-    return [
-        'hero_welcome' => 'Adventure Awaits in Every Direction',
-        'search_placeholder' => 'Search about Every thing',
-        'search_btn' => 'Search',
-    ];
-    
-?>
+return [
+    'hero_welcome' => 'Adventure Awaits in Every Direction',
+    'hero_title_1' => 'Adventure Awaits',
+    'hero_title_2' => 'in Every',
+    'hero_title_3' => 'Direction',
+    'search_placeholder' => 'Search about everything...',
+    'search_btn' => 'Search',
+    'client_reviews' => 'Client Reviews',
+    'rate_us' => 'Rate Us',
+    'no_reviews' => 'No reviews yet. Be the first to rate us!',
+    'share_experience' => 'Share Your Experience',
+    'your_name' => 'Your Name',
+    'your_review' => 'Your Review',
+    'submit_review' => 'Submit Review',
+    'submitting' => 'Submitting...',
+    'cancel' => 'Cancel',
+    'get_started_now' => 'Get Started Now',
+    'happy_clients' => 'Happy Clients',
+    'years_experience' => 'Years Experience',
+    'successful_flights' => 'Successful Flights',
+    'user_rating' => 'User Rating',
+    'your_moments' => 'Your Moments With Us',
+    'send_message_title' => 'Send Us a Message',
+    'your_full_name' => 'Your Full Name',
+    'phone_placeholder' => 'WhatsApp / Phone Number',
+    'date_placeholder' => 'Select Date',
+    'message_placeholder' => 'How can we help you today?',
+    'send_message_btn' => 'Send Message Now',
+    'review_success' => 'Thank you for your review!',
+    'review_error' => 'Something went wrong. Please check your inputs.',
+    'connection_error' => 'Connection error. Please try again later.',
+];

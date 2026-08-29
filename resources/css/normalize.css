@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+:root {
+    --primary_color: rgb(44, 62, 80);
+    --secondary_color: #00d4ff;
+
+    /* other colors */
+    --white: #fff;
+    --textColor: #555;
+
+    /* typography */
+    --fs_huge: 65px;
+    --fs_smaller: 14px;
+    /* btn color */
+    --btn_color: rgb(57, 169, 224);
+
+    /* weights */
+    --fw-Medium: 500;
+}
+
+#mainNav {
+    transition: background-color 0.5s ease;
+    z-index: 1050 !important;
+}
+
+.nav-link {
+    color: #333 !important; /* لون الخط يكون غامق */
+    font-weight: 500;
+}
+
+h1 {
+    font-size: var(--fs_huge) !important;
+    font-weight: 700 !important;
+    line-height: 90px !important;
+    color: var(--white) !important;
+}
+
+h1 .title_Splited {
+    color: var(--secondary_color);
+}
+
+h4 {
+    /* just for taglines*/
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+a {
+    font-size: var(--fs_smaller);
+    font-weight: 400 !important;
+    text-decoration: none !important;
+}
+
+section {
+    padding: 6% !important;
+}
+
+p {
+    color: var(--textColor);
+}
+
+.primary_btn {
+    /* Primary Button */
+    font-weight: var(--fw-Medium);
+    font-size: var(--fs_smaller);
+    letter-spacing: 0.05em;
+    border-radius: 0.8em;
+    cursor: pointer;
+    border: none;
+    text-transform: capitalize;
+    background-color: var(--primary_color);
+    padding: 12px 32px;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.primary_links {
+   font-weight: var(--fw-Medium); 
+}
+
+.tagline {
+    color: var(--secondary_color) !important;
+    padding: 15px 0;
+}
+.color_star{
+    color: var(--secondary_color);
+}
+.stat-card:hover{
+    color: var(--primary_color) !important;
+}
+.stat-card:hover .stat-icon,
+.stat-card:hover .color_star {
+    color: #f1c40f !important;
+}

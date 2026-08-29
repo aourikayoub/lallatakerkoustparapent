@@ -4,8 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Camel lalla Takerkoust Parapente</title>
-  <link rel="stylesheet" href="{{ asset('styles/quad.css') }}">
+  <title>Camel Rides in Marrakech & Agafay | Lalla Takerkoust</title>
+  <meta name="description" content="Experience a timeless journey with authentic camel rides through the beautiful desert landscapes of Agafay and Lalla Takerkoust near Marrakech.">
+  <meta name="keywords" content="camel ride marrakech, agafay camel tour, lalla takerkoust camel, morocco desert ride">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Authentic Camel Rides in Marrakech">
+  <meta property="og:description" content="A timeless journey through the Agafay Desert and Lalla Takerkoust.">
+  <meta property="og:image" content="{{ asset('images/OIP.webp') }}">
+  <meta property="og:url" content="{{ url()->current() }}">
+  @vite(['resources/css/quad.css'])
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,900;1,400&display=swap"
     rel="stylesheet">
@@ -138,7 +147,7 @@
       &copy;  {{ date(format: 'Y') }} <b>Ayoub AouRik</b> - All Rights Reserved.
     </div>
   </footer>
-  <script src="quad.js"></script>
+  @vite(['resources/js/quad.js'])
 </body>
 
 </html>

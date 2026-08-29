@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lalla Takerkoust Parapente</title>
+  <title>Lalla Takerkoust Parapente | Paragliding & Adventures in Marrakech</title>
+  <meta name="description" content="Experience the thrill of a lifetime with Lalla Takerkoust Parapente. We offer premium paragliding, quad biking, and camel rides in Marrakech, Agafay, and the Atlas Mountains.">
+  <meta name="keywords" content="paragliding marrakech, lalla takerkoust, agafay desert, morocco adventure, quad biking marrakech, camel ride agafay">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lalla Takerkoust Parapente | Adventures in Marrakech">
+  <meta property="og:description" content="Experience premium paragliding, quad biking, and camel rides in Marrakech and Agafay.">
+  <meta property="og:image" content="{{ asset('images/bgs/about_image.jpg') }}">
+  <meta property="og:url" content="{{ url()->current() }}">
   <!-- css link -->
-  <link rel="stylesheet" href="{{ asset('styles/styles.css') }}">
+  @vite(['resources/css/styles.css'])
 
   <!-- poppins font  (english ....)-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +23,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
+
+  <link rel="shortcut icon" href=" {{ asset('images/favicon.ico') }}" type="image/x-icon">
 
   <!-- Readex Pro (arabic) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,14 +40,12 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Icons -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <!-- icons -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
 <body>
- @include('partiat/navBar')
-  <header class="hero-slider-section"> 
+ @include('partials.navbar')
+  <header class="hero-slider-section">
     <!-- Video Slider Container -->
     <div class="video-slider">
       <div class="video-slide active">
@@ -70,53 +79,89 @@
         <!-- Right Column: Glass Reviews Card -->
         <div class="hero-right-col d-flex justify-content-center align-items-center">
           <div class="hero-reviews-glass shadow-lg">
-            <div class="reviews-header pb-3 mb-3 border-bottom border-white border-opacity-25">
-              <h3 class="h5 mb-0 text-white fw-bold">Client Reviews</h3>
-              <div class="stars text-warning mt-1">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span class="text-white opacity-75 ms-2 small">5.0 Rating</span>
+            <div class="reviews-header pb-3 mb-3 border-bottom border-white border-opacity-25 d-flex justify-content-between align-items-center">
+              <div>
+                <h3 class="h5 mb-0 text-white fw-bold">{{ __('messages.client_reviews') }}</h3>
+                <div class="stars text-warning mt-1">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+              <button class="btn btn-sm btn-outline-light rounded-pill px-3" id="toggleReviewForm">
+                <i class="fa-solid fa-plus me-1"></i> {{ __('messages.rate_us') }}
+              </button>
+            </div>
+
+            <div class="reviews-content-wrapper position-relative">
+              <!-- Reviews List -->
+              <div class="reviews-scroll" id="reviewsList">
+                @forelse($reviews as $review)
+                <div class="review-item mb-4">
+                  <div class="d-flex align-items-start mb-2">
+                    <div class="avatar-sm rounded-circle me-3 d-flex align-items-center justify-content-center bg-white bg-opacity-25 text-white fw-bold">
+                      {{ strtoupper(substr($review->name, 0, 1)) }}
+                    </div>
+                    <div class="flex-grow-1">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <h6 class="mb-0 text-white fw-bold small">{{ $review->name }}</h6>
+                        <div class="text-warning small" style="font-size: 0.7rem;">
+                          @for($i = 0; $i < $review->rating; $i++)
+                            <i class="fa-solid fa-star"></i>
+                          @endfor
+                        </div>
+                      </div>
+                      <p class="text-white opacity-75 mb-0 small mt-1" style="font-size: 0.85rem; line-height: 1.4;">
+                        "{{ $review->comment }}"
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                @empty
+                <div class="text-center py-4 text-white opacity-50">
+                  <p class="small mb-0">{{ __('messages.no_reviews') }}</p>
+                </div>
+                @endforelse
+              </div>
+
+              <!-- Review Form (Hidden by default) -->
+              <div class="review-form-overlay" id="reviewFormContainer" style="display: none;">
+                <form id="ajaxReviewForm" class="p-2">
+                  @csrf
+                  <h6 class="text-white fw-bold mb-3">{{ __('messages.share_experience') }}</h6>
+                  
+                  <div class="mb-3">
+                    <input type="text" name="name" class="form-control form-control-sm bg-white bg-opacity-10 border-white border-opacity-25 text-white" placeholder="{{ __('messages.your_name') }}" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="star-rating-input d-flex gap-2 justify-content-center mb-2">
+                      <input type="hidden" name="rating" id="reviewRatingValue" value="5">
+                      <i class="fa-solid fa-star rating-star cursor-pointer text-warning" data-rating="1"></i>
+                      <i class="fa-solid fa-star rating-star cursor-pointer text-warning" data-rating="2"></i>
+                      <i class="fa-solid fa-star rating-star cursor-pointer text-warning" data-rating="3"></i>
+                      <i class="fa-solid fa-star rating-star cursor-pointer text-warning" data-rating="4"></i>
+                      <i class="fa-solid fa-star rating-star cursor-pointer text-warning" data-rating="5"></i>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <textarea name="comment" class="form-control form-control-sm bg-white bg-opacity-10 border-white border-opacity-25 text-white" placeholder="{{ __('messages.your_review') }}" rows="3" required></textarea>
+                  </div>
+
+                  <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-sm btn-primary flex-grow-1 rounded-pill">{{ __('messages.submit_review') }}</button>
+                    <button type="button" class="btn btn-sm btn-secondary rounded-pill" id="cancelReview">{{ __('messages.cancel') }}</button>
+                  </div>
+                </form>
               </div>
             </div>
 
-            <div class="reviews-scroll">
-              <div class="review-item mb-4">
-                <div class="d-flex align-items-center mb-2">
-                  <img src="https://i.pravatar.cc/150?u=1" class="avatar-sm rounded-circle me-3" alt="Client 1">
-                  <div>
-                    <h6 class="mb-0 text-white fw-bold">Sarah Johnson</h6>
-                    <small class="text-white opacity-50 italic text-lowercase">"Best experience ever!"</small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="review-item mb-4">
-                <div class="d-flex align-items-center mb-2">
-                  <img src="https://i.pravatar.cc/150?u=2" class="avatar-sm rounded-circle me-3" alt="Client 2">
-                  <div>
-                    <h6 class="mb-0 text-white fw-bold">Michael Brown</h6>
-                    <small class="text-white opacity-50 italic text-lowercase">"The views were breathtaking!"</small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="review-item mb-4">
-                <div class="d-flex align-items-center mb-2">
-                  <img src="https://i.pravatar.cc/150?u=3" class="avatar-sm rounded-circle me-3" alt="Client 3">
-                  <div>
-                    <h6 class="mb-0 text-white fw-bold">Elena Rodriguez</h6>
-                    <small class="text-white opacity-50 italic text-lowercase">"Highly recommend for families."</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="reviews-cta mt-auto pt-3">
-              <a href="#contact-form" class="impressive-btn w-100 justify-content-center">
-                Get Started Now <i class="fa-solid fa-arrow-right ms-2"></i>
+            <div class="reviews-cta mt-auto pt-3 border-top border-white border-opacity-10">
+              <a href="#contact-form" class="impressive-btn w-100 justify-content-center py-2" style="font-size: 0.85rem;">
+                {{ __('messages.get_started_now') }} <i class="fa-solid fa-arrow-right ms-2"></i>
               </a>
             </div>
           </div>
@@ -126,8 +171,8 @@
         <div class="hero-left-col">
           <div class="hero_section">
             <h1 class="py-4 text-center">
-              Adventure Awaits <br> in Every <span class="title_placeholder">
-                Direction
+              {{ __('messages.hero_title_1') }} <br> {{ __('messages.hero_title_2') }} <span class="title_placeholder">
+                {{ __('messages.hero_title_3') }}
               </span>
             </h1>
           </div>
@@ -160,30 +205,30 @@
         </p>
 
         <a href="#activities" class="impressive-btn">
-          Rate us <i class="fa-solid fa-arrow-right"></i>
+          {{ __('messages.rate_us') }} <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
       <div class="col-md-6 wwa_stats">
         <div class="stats-grid">
           <div class="stat-card">
-            <i class="fa-solid fa-users stat-icon"></i>
+            <i class="color_star fa-solid fa-users stat-icon"></i>
             <h3 class="stat-number"><span class="counter" data-target="5" data-suffix="k+">0</span></h3>
-            <p class="stat-text">Happy Clients</p>
+            <p class="stat-text">{{ __('messages.happy_clients') }}</p>
           </div>
           <div class="stat-card">
-            <i class="fa-solid fa-parachute-box stat-icon"></i>
+            <i class="color_star fa-solid fa-parachute-box stat-icon"></i>
             <h3 class="stat-number"><span class="counter" data-target="10" data-suffix="+">0</span></h3>
-            <p class="stat-text">Years Experience</p>
+            <p class="stat-text">{{ __('messages.years_experience') }}</p>
           </div>
           <div class="stat-card">
-            <i class="fa-solid fa-plane-up stat-icon"></i>
+            <i class="color_star fa-solid fa-plane-up stat-icon"></i>
             <h3 class="stat-number"><span class="counter" data-target="15" data-suffix="k+">0</span></h3>
-            <p class="stat-text">Successful Flights</p>
+            <p class="stat-text">{{ __('messages.successful_flights') }}</p>
           </div>
           <div class="stat-card">
-            <i class="fa-solid fa-star stat-icon"></i>
+            <i class="color_star fa-solid fa-star stat-icon"></i>
             <h3 class="stat-number"><span class="counter" data-target="4.9" data-suffix="" data-decimals="1">0</span></h3>
-            <p class="stat-text">User Rating</p>
+            <p class="stat-text">{{ __('messages.user_rating') }}</p>
           </div>
         </div>
       </div>
@@ -194,57 +239,14 @@
     <div>
       <h2 class="section-title"> {{ __('cards.title_cards') }}</h2>
       <div class="why-cards">
+        @foreach($services as $service)
         <div class="card">
-          <img src="{{ asset('images/items_2/adrinaline.jpg') }}" alt="Adventure">
-          <h4>{{__('cards.title_adr_para')}}</h4>
-          <p>{{ __('cards.text_adr_para') }}</p>
-          <a class="btn_card" href="">{{ __('cards.btn_cards') }}</a>
+          <img src="{{ asset($service->service_cover) }}" alt="{{ $service->{'Service_name_' . app()->getLocale()} }}">
+          <h4>{{ $service->{'Service_name_' . app()->getLocale()} }}</h4>
+          <p>{{ $service->{'Service_overview_' . app()->getLocale()} }}</p>
+          <a class="btn_card" href="{{ route('services.details', $service->Service_name_en) }}">{{ __('cards.btn_cards') }}</a>
         </div>
-
-        <div class="card">
-          <img src="{{ asset('images/items_1/img para 2.jpg') }}" alt="Parapente">
-          <h4>{{ __('cards.title_adv_para') }}</h4>
-          <p>{{ __('cards.text_adv_para') }}</p>
-          <a class="btn_card" href="">{{ __('cards.btn_cards') }}</a>
-        </div>
-
-        <div class="card">
-          <img src="{{ asset('images/items_1/IMG_20221126_205957-scaled.jpg') }}" alt="Buggy & Quad">
-          <h4>{{ __('cards.title_quad') }}</h4>
-          <p>{{ __('cards.text_quad') }}</p>
-          <a class="btn_card" href="">{{ __('cards.btn_cards') }}</a>
-        </div>
-
-        <div class="card">
-          <img src="{{ asset('images/items_1/OIP.webp') }}" alt="Camel Ride">
-          <h4>{{ __('cards.title_camel') }}</h4>
-          <p>{{ __('cards.text_camel') }}</p>
-          <a class="btn_card" href="">{{ __('cards.btn_cards') }}</a>
-        </div>
-        <div class="card">
-          <img src="{{ asset('images/items_1/IMG-20241231-WA0006.jpg') }}" alt="Tea Break Before Takeoff">
-          <h4>{{__('cards.title_tea') }}</h4>
-          <p>{{ __('cards.text_tea') }}</p>
-          <a class="btn_card" href="">{{ __('cards.btn_cards') }}</a>
-        </div>
-        <div class="card">
-          <img src="{{ asset('images/items_1/photo_2025-08-31_06-53-49.jpg') }}" alt="Optional Lanch">
-          <h4>{{ __('cards.title_lanch') }}</h4>
-          <p>{{ __('cards.text_lanch') }}</p>
-          <a class="btn_card" href="">{{ __('cards.btn_cards') }}</a>
-        </div>
-        <div class="card">
-          <img src="{{ asset('images/items_2/img 5.jpg') }}" alt="Transport">
-          <h4>{{ __('cards.title_transport') }}</h4>
-          <p>{{ __('cards.text_transport') }}</p>
-          <a class="btn_card" href="">{{ __('cards.btn_cards') }}</a>
-        </div>
-        <div class="card">
-          <img src="{{ asset('images/items_2/img-3.jpg') }}" alt="Photography & Video">
-          <h4>{{ __('cards.title_media') }}</h4>
-          <p>{{ __('cards.text_media') }}</p>
-          <a class="btn_card" href="">{{ __('cards.btn_cards') }}</a>
-        </div>
+        @endforeach
       </div>
     </div>
   </section>
@@ -260,23 +262,31 @@
   </section>
 
   <section id="gallery" class="container-fluid px-md-5 py-5">
-    <h2 class="section-title text-center mb-5"> Your Moments With Us</h2>
+    <h2 class="section-title text-center mb-5"> {{ __('messages.your_moments') }}</h2>
     <div class="gallery-custom-grid">
       <div class="gallery-main-content">
         <img src="{{asset('images/items_1/photo_2025-08-31_06-53-49.jpg')}}" alt="Gallery Main Event">
-        <i class="fa-solid fa-play play-icon-overlay"></i>
+        <div class="play-icon-overlay">
+          <i class="fa-solid fa-play"></i>
+        </div>
       </div>
       <div class="gallery-sidebar">
         <img src="{{ asset('images/items_1/G0013437.JPG') }}" alt="Gallery Sidebar Event">
-        <i class="fa-solid fa-play play-icon-overlay"></i>
+        <div class="play-icon-overlay">
+          <i class="fa-solid fa-play"></i>
+        </div>
       </div>
       <div class="gallery-twin-1">
         <img src="{{ asset('images/items_2/img-1.jpg') }}" alt="Gallery Twin Left">
-        <i class="fa-solid fa-play play-icon-overlay"></i>
+        <div class="play-icon-overlay">
+          <i class="fa-solid fa-play"></i>
+        </div>
       </div>
       <div class="gallery-twin-2">
         <img src="{{ asset('images/items_2/img-2.jpg') }}" alt="Gallery Twin Right">
-        <i class="fa-solid fa-play play-icon-overlay"></i>
+        <div class="play-icon-overlay">
+          <i class="fa-solid fa-play"></i>
+        </div>
       </div>
     </div>
   </section>
@@ -286,15 +296,15 @@
       <!-- Contact Form Column -->
       <div class="col-lg-6 mb-4 mb-lg-0">
         <div class="form-container h-100 shadow-sm border-0" style="max-width: none; margin: 0; padding: 50px;">
-          <h2 class="section-title mb-4" style="font-size: 1.8rem;">Send Us a Message</h2>
+          <h2 class="section-title mb-4" style="font-size: 1.8rem;">{{ __('messages.send_message_title') }}</h2>
           <form action="#" method="post" class="enhanced-form">
             <div class="mb-4 position-relative">
               <i class="fa-solid fa-user position-absolute top-50 translate-middle-y ms-3 text-muted"></i>
-              <input class="form-control bg-light border-0 ps-5 py-3" type="text" id="name" placeholder="Your Full Name" name="name" required style="border-radius: 10px;">
+              <input class="form-control bg-light border-0 ps-5 py-3" type="text" id="name" placeholder="{{ __('messages.your_full_name') }}" name="name" required style="border-radius: 10px;">
             </div>
             <div class="mb-4 position-relative">
               <i class="fa-solid fa-phone position-absolute top-50 translate-middle-y ms-3 text-muted"></i>
-              <input class="form-control bg-light border-0 ps-5 py-3" type="phone" id="Number" placeholder="WhatsApp / Phone Number" name="phone" required style="border-radius: 10px;">
+              <input class="form-control bg-light border-0 ps-5 py-3" type="phone" id="Number" placeholder="{{ __('messages.phone_placeholder') }}" name="phone" required style="border-radius: 10px;">
             </div>
             <div class="mb-4 position-relative">
               <i class="fa-solid fa-calendar-days position-absolute top-50 translate-middle-y ms-3 text-muted"></i>
@@ -302,11 +312,11 @@
             </div>
             <div class="mb-4 position-relative">
               <i class="fa-solid fa-comment-dots position-absolute top-0 mt-3 ms-3 text-muted"></i>
-              <textarea class="form-control bg-light border-0 ps-5 py-3" id="message" name="message" placeholder="How can we help you today?" rows="5" required style="border-radius: 10px;"></textarea>
+              <textarea class="form-control bg-light border-0 ps-5 py-3" id="message" name="message" placeholder="{{ __('messages.message_placeholder') }}" rows="5" required style="border-radius: 10px;"></textarea>
             </div>
             <div class="submit-btn w-100 mt-2">
               <button class="impressive-btn w-100 justify-content-center border-0 py-3" type="submit">
-                <span>Send Message Now</span> <i class="fa-solid fa-paper-plane ms-2"></i>
+                <span>{{ __('messages.send_message_btn') }}</span> <i class="fa-solid fa-paper-plane ms-2"></i>
               </button>
             </div>
           </form>
@@ -329,14 +339,14 @@
     </div>
   </section>
 
-  @include('partiat.footer')
+  @include('partials.footer')
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
     integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
     crossorigin="anonymous"></script>
-  <script src="{{ asset('js/script.js') }}"></script>
+  @vite(['resources/js/script.js'])
 </body>
 
 </html>

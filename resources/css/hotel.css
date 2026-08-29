@@ -1,0 +1,268 @@
+:root {
+    --hotel-primary: #1a2b48;
+    --hotel-secondary: #00d4ff;
+    --hotel-accent: #f1c40f;
+    --hotel-text: #4a4a4a;
+    --hotel-light: #f8f9fa;
+    --hotel-white: #ffffff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--hotel-text);
+}
+
+/* Custom Nav Overrides for Hotel Page */
+#mainNav {
+    transition: background 0.3s ease;
+    z-index: 1050 !important;
+}
+
+/* Hero Section */
+.hotel-hero {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hotel-hero > .container {
+    padding-top: 120px; /* Space for fixed navbar */
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 4px;
+    opacity: 0.9;
+    color: var(--hotel-light);
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+.hero-title {
+    font-size: 5.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* Floating Search Bar */
+.search-bar-container {
+    width: 95%;
+    max-width: 1100px;
+    margin-top: -40px;
+    z-index: 5;
+    position: relative;
+}
+
+.search-form {
+    border-radius: 100px; /* Default for desktop */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.search-item {
+    border-right: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.search-item:last-of-type {
+    border-right: none;
+}
+
+.search-bar-container .form-select,
+.search-bar-container .form-control {
+    font-size: 1rem;
+    color: var(--hotel-primary);
+    cursor: pointer;
+}
+
+.search-bar-container label {
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.search-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    transform: scale(1.05);
+    background-color: var(--hotel-secondary);
+}
+
+/* Hotel Cards */
+.section-title {
+    font-size: 2.5rem;
+    color: var(--hotel-primary);
+}
+
+.hotel-filter-tabs button {
+    background: none;
+    border: none;
+    font-weight: 600;
+    color: #999;
+    padding: 5px 15px;
+    transition: all 0.3s ease;
+}
+
+.hotel-filter-tabs button.active {
+    color: var(--hotel-primary);
+    border-bottom: 2px solid var(--hotel-primary);
+}
+
+.hotel-card {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.hotel-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+}
+
+.hotel-img {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.hotel-card:hover .hotel-img {
+    transform: scale(1.05);
+}
+
+/* Category Icons */
+.category-icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-icon-box i {
+    font-size: 2.5rem;
+    color: var(--hotel-primary);
+    background: var(--hotel-light);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.category-icon-box:hover i {
+    background: var(--hotel-primary);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.category-icon-box span {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--hotel-primary);
+}
+
+/* Deal Cards */
+.deal-card {
+    height: 350px;
+    cursor: pointer;
+}
+
+.deal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+    transition: background 0.3s ease;
+}
+
+.deal-card:hover .deal-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.8));
+}
+
+.letter-spacing-2 {
+    letter-spacing: 2px;
+}
+
+.gray-scale-logos img {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.gray-scale-logos img:hover {
+    filter: grayscale(0%);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .search-form {
+        border-radius: 24px;
+        padding: 20px !important;
+    }
+
+    .search-item {
+        border-right: none !important;
+        border-bottom: 1px solid #f0f0f0;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+    }
+
+    .search-item:nth-last-of-type(2) {
+        border-bottom: none !important;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .search-btn {
+        width: 100%;
+        border-radius: 12px !important;
+        height: 55px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hotel-hero {
+        height: auto;
+        min-height: 85vh;
+        padding-bottom: 60px;
+    }
+
+    .hotel-hero > .container {
+        padding-top: 100px;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+        margin-bottom: 2rem !important;
+    }
+
+    .search-bar-container {
+        margin-top: -10px;
+        width: 95%;
+    }
+}
+
+@media (min-width: 992px) {
+    .search-item {
+        border-right: 1px solid #eee;
+    }
+    .search-item:last-of-type {
+        border-right: none;
+    }
+}

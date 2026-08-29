@@ -4,8 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quad lalla Takerkoust Parapente</title>
-   <link rel="stylesheet" href="{{ asset('styles/quad.css') }}">
+    <title>Quad Biking in Marrakech & Agafay Desert | Lalla Takerkoust</title>
+    <meta name="description" content="Join us for the ultimate Quad biking experience in Marrakech. Explore the rocky trails of the Agafay Desert and Lalla Takerkoust with expert guides.">
+    <meta name="keywords" content="quad biking marrakech, atv agafay desert, quad lalla takerkoust, marrakech adventure tours">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Quad Biking Adventure in Marrakech">
+    <meta property="og:description" content="Explore the Agafay Desert and Lalla Takerkoust on an unforgettable quad biking tour.">
+    <meta property="og:image" content="{{ asset('images/quad-marrakech.avif') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+   @vite(['resources/css/quad.css'])
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,900;1,400&display=swap"
         rel="stylesheet">
@@ -258,7 +267,7 @@
       &copy; {{ date(format: 'Y') }} Ayoub AouRik - All Rights Reserved.
     </div>
   </footer>
-    <script src="quad.js"></script>
+    @vite(['resources/js/quad.js'])
 </body>
 
 </html>

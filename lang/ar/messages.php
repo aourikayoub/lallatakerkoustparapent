@@ -1,9 +1,34 @@
 <?php
 
-    return [
-        'hero_welcome' => 'المغامرة تنتظرك في كل اتجاه',
-        'search_placeholder' => 'ابحث عن كل شيء',
-        'search_btn' => 'بحث',
-    ];
-    
-?>
+return [
+    'hero_welcome' => 'المغامرة تنتظرك في كل اتجاه',
+    'hero_title_1' => 'المغامرة بانتظارك',
+    'hero_title_2' => 'في كل',
+    'hero_title_3' => 'اتجاه',
+    'search_placeholder' => 'ابحث عن أي شيء...',
+    'search_btn' => 'بحث',
+    'client_reviews' => 'آراء العملاء',
+    'rate_us' => 'قيّمنا',
+    'no_reviews' => 'لا توجد تقييمات بعد. كن أول من يقيّمنا!',
+    'share_experience' => 'شارك تجربتك معنا',
+    'your_name' => 'اسمك الكامل',
+    'your_review' => 'تقييمك أو تعليقك',
+    'submit_review' => 'إرسال التقييم',
+    'submitting' => 'جاري الإرسال...',
+    'cancel' => 'إلغاء',
+    'get_started_now' => 'ابدأ الآن',
+    'happy_clients' => 'عملاء سعداء',
+    'years_experience' => 'سنوات من الخبرة',
+    'successful_flights' => 'رحلة ناجحة',
+    'user_rating' => 'تقييم المستخدمين',
+    'your_moments' => 'لحظاتكم المميزة معنا',
+    'send_message_title' => 'أرسل لنا رسالة',
+    'your_full_name' => 'الاسم الكامل',
+    'phone_placeholder' => 'رقم الهاتف / واتساب',
+    'date_placeholder' => 'حدد التاريخ',
+    'message_placeholder' => 'كيف يمكننا مساعدتك اليوم؟',
+    'send_message_btn' => 'إرسال الرسالة الآن',
+    'review_success' => 'شكراً جزيلاً على تقييمك!',
+    'review_error' => 'حدث خطأ ما. يرجى التحقق من البيانات المدخلة.',
+    'connection_error' => 'خطأ في الاتصال. يرجى المحاولة لاحقاً.',
+];

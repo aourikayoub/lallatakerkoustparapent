@@ -1,9 +1,34 @@
 <?php
 
-    return [
-        'hero_welcome' => 'La aventura te espera en todas direcciones',
-        'search_placeholder' => 'Buscar sobre todo',
-        'search_btn' => 'Buscar',
-    ];
-    
-?>
+return [
+    'hero_welcome' => 'La aventura te espera en todas direcciones',
+    'hero_title_1' => 'La aventura te espera',
+    'hero_title_2' => 'en todas',
+    'hero_title_3' => 'direcciones',
+    'search_placeholder' => 'Buscar cualquier actividad...',
+    'search_btn' => 'Buscar',
+    'client_reviews' => 'Opiniones de clientes',
+    'rate_us' => 'Califícanos',
+    'no_reviews' => 'No hay reseñas todavía. ¡Sé el primero en calificarnos!',
+    'share_experience' => 'Comparte tu experiencia',
+    'your_name' => 'Tu nombre',
+    'your_review' => 'Tu reseña',
+    'submit_review' => 'Enviar reseña',
+    'submitting' => 'Enviando...',
+    'cancel' => 'Cancelar',
+    'get_started_now' => 'Comenzar ahora',
+    'happy_clients' => 'Clientes felices',
+    'years_experience' => 'Años de experiencia',
+    'successful_flights' => 'Vuelos exitosos',
+    'user_rating' => 'Valoración de usuarios',
+    'your_moments' => 'Tus momentos con nosotros',
+    'send_message_title' => 'Envíanos un mensaje',
+    'your_full_name' => 'Nombre completo',
+    'phone_placeholder' => 'WhatsApp / Teléfono',
+    'date_placeholder' => 'Seleccionar fecha',
+    'message_placeholder' => '¿Cómo podemos ayudarte hoy?',
+    'send_message_btn' => 'Enviar mensaje ahora',
+    'review_success' => '¡Muchas gracias por tu reseña!',
+    'review_error' => 'Algo salió mal. Por favor verifica tus datos.',
+    'connection_error' => 'Error de conexión. Inténtalo de nuevo más tarde.',
+];
