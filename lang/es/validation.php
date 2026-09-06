@@ -1,0 +1,50 @@
+<?php
+
+return [
+    'accepted' => 'El campo :attribute debe aceptarse.',
+    'active_url' => 'El campo :attribute debe ser una URL válida.',
+    'array' => 'El campo :attribute debe ser un arreglo.',
+    'between' => [
+        'array' => 'El campo :attribute debe tener entre :min y :max elementos.',
+        'file' => 'El campo :attribute debe pesar entre :min y :max kilobytes.',
+        'numeric' => 'El campo :attribute debe estar entre :min y :max.',
+        'string' => 'El campo :attribute debe tener entre :min y :max caracteres.',
+    ],
+    'boolean' => 'El campo :attribute debe ser verdadero o falso.',
+    'date' => 'El campo :attribute debe ser una fecha válida.',
+    'email' => 'El campo :attribute debe ser una dirección de correo válida.',
+    'image' => 'El campo :attribute debe ser una imagen.',
+    'integer' => 'El campo :attribute debe ser un número entero.',
+    'max' => [
+        'array' => 'El campo :attribute no puede tener más de :max elementos.',
+        'file' => 'El campo :attribute no puede pesar más de :max kilobytes.',
+        'numeric' => 'El campo :attribute no puede ser mayor que :max.',
+        'string' => 'El campo :attribute no puede tener más de :max caracteres.',
+    ],
+    'min' => [
+        'array' => 'El campo :attribute debe tener al menos :min elementos.',
+        'file' => 'El campo :attribute debe pesar al menos :min kilobytes.',
+        'numeric' => 'El campo :attribute debe ser como mínimo :min.',
+        'string' => 'El campo :attribute debe tener al menos :min caracteres.',
+    ],
+    'mimes' => 'El campo :attribute debe ser un archivo de tipo: :values.',
+    'numeric' => 'El campo :attribute debe ser un número.',
+    'required' => 'El campo :attribute es obligatorio.',
+    'same' => 'El campo :attribute debe coincidir con :other.',
+    'size' => [
+        'array' => 'El campo :attribute debe contener :size elementos.',
+        'file' => 'El campo :attribute debe pesar :size kilobytes.',
+        'numeric' => 'El campo :attribute debe ser :size.',
+        'string' => 'El campo :attribute debe tener :size caracteres.',
+    ],
+    'string' => 'El campo :attribute debe ser una cadena de texto.',
+    'url' => 'El campo :attribute debe ser una URL válida.',
+    'unique' => 'El valor de :attribute ya está en uso.',
+    'custom' => [],
+    'attributes' => [
+        'name' => 'nombre',
+        'rating' => 'valoración',
+        'comment' => 'comentario',
+        'email' => 'correo electrónico',
+    ],
+];

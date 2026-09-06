@@ -323,23 +323,12 @@
     <section class="py-5 bg-white">
         <div class="container text-center py-4">
             <h5 class="text-muted text-uppercase letter-spacing-2 mb-4">Our Partners</h5>
-            <div class="row align-items-center justify-content-center g-5 opacity-50 gray-scale-logos">
-                <!-- Using placeholder icons for logos -->
-                <div class="col-auto"><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Hilton_logo.svg?width=100" height="40"
-                        alt="Partner"></div>
-                <div class="col-auto"><img
-                        src="https://upload.wikimedia.org/wikipedia/en/3/30/Marriott_International_logo.svg?width=100"
-                        height="40" alt="Partner"></div>
-                <div class="col-auto"><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Hyatt_logo.svg?width=100" height="40"
-                        alt="Partner"></div>
-                <div class="col-auto"><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/5/53/Radisson_Hotels_Logo.svg?width=100"
-                        height="40" alt="Partner"></div>
-                <div class="col-auto"><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Four_Seasons_Hotels_logo.svg?width=100"
-                        height="40" alt="Partner"></div>
+                <div class="row align-items-center justify-content-center g-4 gray-scale-logos">
+                <div class="col-auto"><span class="partner-name">HILTON</span></div>
+                <div class="col-auto"><span class="partner-name">MARRIOTT</span></div>
+                <div class="col-auto"><span class="partner-name">HYATT</span></div>
+                <div class="col-auto"><span class="partner-name">RADISSON</span></div>
+                <div class="col-auto"><span class="partner-name">FOUR SEASONS</span></div>
             </div>
         </div>
     </section>

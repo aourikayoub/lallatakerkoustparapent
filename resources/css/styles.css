@@ -8,6 +8,7 @@ header {
   display: flex;
   flex-direction: column;
   position: relative;
+  z-index: 1;
   overflow: hidden;
 }
 .contact_info span:hover{
@@ -17,6 +18,7 @@ header {
 .hero-slider-section {
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 .video-slider {
@@ -128,6 +130,8 @@ header {
 }
 
 .hero-flex-layout {
+  position: relative;
+  z-index: 11;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -155,13 +159,13 @@ header {
 
 /* Glassmorphism Reviews Card */
 .hero-reviews-glass {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(19, 31, 45, 0.62);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-radius: 24px;
   padding: 30px;
   width: 100%;
-  max-width: 450px;
+  max-width: 390px;
   display: flex;
   flex-direction: column;
   max-height: 500px;
@@ -177,6 +181,11 @@ header {
   overflow-y: auto;
   padding-right: 10px;
   margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.reviews-scroll .text-white {
+  color: rgba(255, 255, 255, 0.92) !important;
 }
 
 /* Custom Scrollbar for the glass card */
@@ -296,7 +305,7 @@ header {
     font-size: 2.8rem !important;
   }
   .hero-reviews-glass {
-    max-width: 380px;
+    max-width: 360px;
     margin: 0 auto;
     max-height: none;
   }

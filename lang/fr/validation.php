@@ -1,0 +1,50 @@
+<?php
+
+return [
+    'accepted' => 'Le champ :attribute doit être accepté.',
+    'active_url' => 'Le champ :attribute doit être une URL valide.',
+    'array' => 'Le champ :attribute doit être un tableau.',
+    'between' => [
+        'array' => 'Le champ :attribute doit contenir entre :min et :max éléments.',
+        'file' => 'Le fichier :attribute doit peser entre :min et :max kilo-octets.',
+        'numeric' => 'La valeur de :attribute doit être comprise entre :min et :max.',
+        'string' => 'Le champ :attribute doit contenir entre :min et :max caractères.',
+    ],
+    'boolean' => 'Le champ :attribute doit être vrai ou faux.',
+    'date' => 'Le champ :attribute doit être une date valide.',
+    'email' => 'Le champ :attribute doit être une adresse e-mail valide.',
+    'image' => 'Le champ :attribute doit être une image.',
+    'integer' => 'Le champ :attribute doit être un nombre entier.',
+    'max' => [
+        'array' => 'Le champ :attribute ne doit pas contenir plus de :max éléments.',
+        'file' => 'Le fichier :attribute ne doit pas dépasser :max kilo-octets.',
+        'numeric' => 'La valeur de :attribute ne doit pas être supérieure à :max.',
+        'string' => 'Le champ :attribute ne doit pas dépasser :max caractères.',
+    ],
+    'min' => [
+        'array' => 'Le champ :attribute doit contenir au moins :min éléments.',
+        'file' => 'Le fichier :attribute doit peser au moins :min kilo-octets.',
+        'numeric' => 'La valeur de :attribute doit être au moins :min.',
+        'string' => 'Le champ :attribute doit contenir au moins :min caractères.',
+    ],
+    'mimes' => 'Le champ :attribute doit être un fichier de type :values.',
+    'numeric' => 'Le champ :attribute doit être un nombre.',
+    'required' => 'Le champ :attribute est obligatoire.',
+    'same' => 'Le champ :attribute doit correspondre à :other.',
+    'size' => [
+        'array' => 'Le champ :attribute doit contenir :size éléments.',
+        'file' => 'Le fichier :attribute doit peser :size kilo-octets.',
+        'numeric' => 'La valeur de :attribute doit être :size.',
+        'string' => 'Le champ :attribute doit contenir :size caractères.',
+    ],
+    'string' => 'Le champ :attribute doit être une chaîne de caractères.',
+    'url' => 'Le champ :attribute doit être une URL valide.',
+    'unique' => 'La valeur de :attribute est déjà utilisée.',
+    'custom' => [],
+    'attributes' => [
+        'name' => 'nom',
+        'rating' => 'évaluation',
+        'comment' => 'commentaire',
+        'email' => 'adresse e-mail',
+    ],
+];

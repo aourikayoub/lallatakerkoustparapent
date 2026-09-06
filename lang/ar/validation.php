@@ -1,0 +1,50 @@
+<?php
+
+return [
+    'accepted' => 'يجب قبول حقل :attribute.',
+    'active_url' => 'يجب أن يكون حقل :attribute رابطاً صالحاً.',
+    'array' => 'يجب أن يكون حقل :attribute مصفوفة.',
+    'between' => [
+        'array' => 'يجب أن يحتوي حقل :attribute على عدد بين :min و:max من العناصر.',
+        'file' => 'يجب أن يكون حجم حقل :attribute بين :min و:max كيلوبايت.',
+        'numeric' => 'يجب أن تكون قيمة حقل :attribute بين :min و:max.',
+        'string' => 'يجب أن يحتوي حقل :attribute على عدد أحرف بين :min و:max.',
+    ],
+    'boolean' => 'يجب أن تكون قيمة حقل :attribute صحيحة أو خاطئة.',
+    'date' => 'يجب أن يكون حقل :attribute تاريخاً صالحاً.',
+    'email' => 'يجب أن يكون حقل :attribute بريداً إلكترونياً صالحاً.',
+    'image' => 'يجب أن يكون حقل :attribute صورة.',
+    'integer' => 'يجب أن يكون حقل :attribute عدداً صحيحاً.',
+    'max' => [
+        'array' => 'لا يجوز أن يحتوي حقل :attribute على أكثر من :max عناصر.',
+        'file' => 'لا يجوز أن يتجاوز حجم حقل :attribute :max كيلوبايت.',
+        'numeric' => 'يجب ألا تتجاوز قيمة حقل :attribute :max.',
+        'string' => 'يجب ألا يتجاوز طول حقل :attribute :max أحرف.',
+    ],
+    'min' => [
+        'array' => 'يجب أن يحتوي حقل :attribute على :min عناصر على الأقل.',
+        'file' => 'يجب ألا يقل حجم حقل :attribute عن :min كيلوبايت.',
+        'numeric' => 'يجب ألا تقل قيمة حقل :attribute عن :min.',
+        'string' => 'يجب ألا يقل طول حقل :attribute عن :min أحرف.',
+    ],
+    'mimes' => 'يجب أن يكون حقل :attribute ملفاً من النوع: :values.',
+    'numeric' => 'يجب أن يكون حقل :attribute رقماً.',
+    'required' => 'حقل :attribute مطلوب.',
+    'same' => 'يجب أن يطابق حقل :attribute حقل :other.',
+    'size' => [
+        'array' => 'يجب أن يحتوي حقل :attribute على :size عناصر.',
+        'file' => 'يجب أن يكون حجم حقل :attribute :size كيلوبايت.',
+        'numeric' => 'يجب أن تكون قيمة حقل :attribute :size.',
+        'string' => 'يجب أن يحتوي حقل :attribute على :size أحرف.',
+    ],
+    'string' => 'يجب أن يكون حقل :attribute نصاً.',
+    'url' => 'يجب أن يكون حقل :attribute رابطاً صالحاً.',
+    'unique' => 'قيمة :attribute مستخدمة من قبل.',
+    'custom' => [],
+    'attributes' => [
+        'name' => 'الاسم',
+        'rating' => 'التقييم',
+        'comment' => 'التعليق',
+        'email' => 'البريد الإلكتروني',
+    ],
+];

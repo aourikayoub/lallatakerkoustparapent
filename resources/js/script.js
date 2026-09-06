@@ -76,45 +76,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const dots = document.querySelectorAll('.indicator-dot');
     
     if (slides.length > 0 && dots.length > 0) {
-        // Dynamicly find the initial active slide
         let currentSlide = Array.from(slides).findIndex(s => s.classList.contains('active'));
         if (currentSlide === -1) currentSlide = 0;
-        
-        console.log("Hero Slider initialized. Start index:", currentSlide, "Total slides:", slides.length);
         
         let slideInterval;
 
         const goToSlide = (nextIndex) => {
-            // Remove active from current
             slides[currentSlide].classList.remove('active');
             dots[currentSlide].classList.remove('active');
-            
-            // Update to next
             currentSlide = (nextIndex + slides.length) % slides.length;
-            
-            // Add active to next
             slides[currentSlide].classList.add('active');
             dots[currentSlide].classList.add('active');
             
-            console.log("Switched to slide:", currentSlide);
-            
-            // Handle Video
             const activeVid = slides[currentSlide].querySelector('video');
             if (activeVid) {
                 activeVid.muted = true;
-                activeVid.play().catch(e => console.warn("Video play error:", e));
+                activeVid.play().catch(() => {});
             }
         };
 
         const startAutoSlide = () => {
             slideInterval = setInterval(() => {
                 goToSlide(currentSlide + 1);
-            }, 6000); // 6 seconds for better viewing
+            }, 6000);
         };
 
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
-                console.log("Manual navigation to slide:", index);
                 clearInterval(slideInterval);
                 goToSlide(index);
                 startAutoSlide();

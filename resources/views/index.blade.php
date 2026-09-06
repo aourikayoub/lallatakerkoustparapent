@@ -78,7 +78,7 @@
       <div class="hero-flex-layout container-fluid px-md-5 g-5">
         <!-- Right Column: Glass Reviews Card -->
         <div class="hero-right-col d-flex justify-content-center align-items-center">
-          <div class="hero-reviews-glass shadow-lg">
+          <div class="hero-reviews-glass shadow-lg" style="background: rgba(19, 31, 45, 0.78); max-width: 390px;">
             <div class="reviews-header pb-3 mb-3 border-bottom border-white border-opacity-25 d-flex justify-content-between align-items-center">
               <div>
                 <h3 class="h5 mb-0 text-white fw-bold">{{ __('messages.client_reviews') }}</h3>
@@ -97,7 +97,7 @@
 
             <div class="reviews-content-wrapper position-relative">
               <!-- Reviews List -->
-              <div class="reviews-scroll" id="reviewsList">
+              <div class="reviews-scroll" id="reviewsList" style="color: rgba(255, 255, 255, 0.92);">
                 @forelse($reviews as $review)
                 <div class="review-item mb-4">
                   <div class="d-flex align-items-start mb-2">
